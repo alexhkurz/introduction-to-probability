@@ -7,7 +7,7 @@ list <- vector(length = number_of_samples)
 
 for (i in 1:number_of_samples)
 {
-  #print("throw dice")
+  #print("roll dice")
   die1_sample <- as_tibble(rdunif(number_of_rolls,1,6)) # all values from 1 to 6 are equally likely
   die2_sample <- as_tibble(rdunif(number_of_rolls,1,6))
   two_dice <- die1_sample + die2_sample # add the values of the two dice
