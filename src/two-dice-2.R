@@ -1,15 +1,15 @@
 library(tidyverse)
 
-number_of_throws <- 30 # the number of times you roll the dice
-number_of_samples <- 100 # how many samples of number_of_throws 
+number_of_rolls <- 30 # the number of times you roll the dice
+number_of_samples <- 20 # how many samples of number_of_throws 
 
 list <- vector(length = number_of_samples)
 
 for (i in 1:number_of_samples)
 {
   #print("throw dice")
-  die1_sample <- as_tibble(rdunif(number_of_throws,1,6)) # all values from 1 to 6 are equally likely
-  die2_sample <- as_tibble(rdunif(number_of_throws,1,6))
+  die1_sample <- as_tibble(rdunif(number_of_rolls,1,6)) # all values from 1 to 6 are equally likely
+  die2_sample <- as_tibble(rdunif(number_of_rolls,1,6))
   two_dice <- die1_sample + die2_sample # add the values of the two dice
   
   #print(paste("sort sample", i))
