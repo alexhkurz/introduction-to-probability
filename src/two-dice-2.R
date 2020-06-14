@@ -2,6 +2,7 @@ library(tidyverse)
 
 number_of_throws <- 30 # the number of times you roll the dice
 number_of_samples <- 100 # how many samples of number_of_throws 
+
 list <- vector(length = number_of_samples)
 
 for (i in 1:number_of_samples)
@@ -20,14 +21,12 @@ for (i in 1:number_of_samples)
   
   #print("update list")
   if (two_dice_sorted[[1]][1]==7) {
-    list[i]<-1
+    list[i]<-TRUE
   } else {
-    list[i]<-0
+    list[i]<-FALSE
   }
 }
 
 #print("plot")
 enframe(list) %>%
-  ggplot() + 
-  geom_bar(aes(x=value)) + 
-  scale_x_continuous(name = "0/1: 7 wasn't/was the most frequent value", breaks = 0:1)
+  ggplot() + geom_bar(aes(x=value)) + labs(x="7 most frequent value")
