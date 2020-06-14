@@ -12,5 +12,5 @@ two_dice <- die1_sample + die2_sample # add the values of the two dice
 two_dice %>%  
   ggplot() + 
   geom_bar(aes(x=value)) + 
-  scale_x_continuous(name = "two dice", breaks = 2:12)
+  scale_x_continuous(name = "two dice", breaks = 1:20)
 

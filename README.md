@@ -27,7 +27,7 @@ This is getting a bit boring to do by hand, so I wrote a little program called [
     two_dice %>%  
     ggplot() + geom_bar(aes(x=value)) + scale_x_continuous(name = "two dice", breaks = 2:12)
 
-**Activity:** Run the program. Read the program line by line and try to find out what each line means. A good way to find out what each line in the program means is to change the lines, to execute the program again and to see what happens.
+**Activity:** Run the program. Read the program line by line and try to find out what each line means. A good way to find out what each line in the program means is to change the lines, to execute the program again and to see what happens. Can you make die that have more than 6 sides?
 
 
 
