@@ -6,7 +6,9 @@ We started by choosing a game that is played by rolling two dice such as backgam
 
 - [Expected Values](https://hackmd.io/@alexhkurz/S1xs327aL)
 - [The Law of Large Numbers](https://hackmd.io/@alexhkurz/BkW-1p7aL)
-- []() ...
+- [The Game of Go](https://hackmd.io/@alexhkurz/HyudqJZC8)
+- Alpha Zero
+- Monte Carlo Methods
 
 
 
