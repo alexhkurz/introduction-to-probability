@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # the number of times you want to roll the two dice
-number_of_rolls <- 30 
+number_of_rolls <- 30
 
 # sample two dice
 die1_sample <- as_tibble(rdunif(number_of_rolls,1,6)) # all values from 1 to 6 are equally likely

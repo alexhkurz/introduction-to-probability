@@ -1,7 +1,7 @@
 library(tidyverse)
 
 number_of_rolls <- 30 # the number of times you roll the dice
-number_of_samples <- 20 # how many samples of number_of_throws 
+number_of_samples <- 20 # how many samples of number_of_rolls 
 
 list <- vector(length = number_of_samples)
 
