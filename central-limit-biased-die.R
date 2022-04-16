@@ -13,7 +13,6 @@ biased_die_2 <- c(4/19,5/19,4/19,3/19,2/19,1/19) # probability distribution 2
 number_of_rolls <- 1 # sample size 
 number_of_samples <- 1 # number of samples 
 
-
 list <- vector(length = number_of_samples) # list of all sample means
 
 for (i in 1:number_of_samples) # compute all sample means
