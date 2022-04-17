@@ -8,7 +8,7 @@ We started by choosing a game that is played by rolling two dice such as backgam
 - [The Law of Large Numbers](https://hackmd.io/@alexhkurz/BkW-1p7aL)
 - [Central Limit Theorem](https://hackmd.io/@alexhkurz/SJIoIAvE5)
 
-Potential applications of probability theory (to be continued when the opportunity arises):
+Potential applications of statistics (to be continued when the opportunity arises):
 - [The Game of Go](https://hackmd.io/@alexhkurz/HyudqJZC8)
 - Alpha Zero
 - Monte Carlo Methods
