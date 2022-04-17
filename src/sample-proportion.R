@@ -21,14 +21,14 @@ for (i in 1:number_of_samples) # compute all sample proportions of green
   sample <- as_tibble(sample(x = c("green","red","orange"), size = sample_size, prob = urn, replace=T))
   # save the sample proportion into the list
   sample %>%
-    filter(value=="green") %>% # retain all row in the subpopulation 
+    filter(value=="green") %>% # retain all rows in the subpopulation 
     count %>%
     pluck(1) -> success # number of rows in the subpopulation 
   list[i] <- success / sample_size # sample
 }
 
 # fraction of green candy in the samples
-sample_mean <- mean(list) # the value can be seen in the Environment
+sample_mean <- mean(list) 
 
 # standard deviation computed from the sample
 aux <- 0
@@ -39,7 +39,7 @@ for (i in 1:number_of_samples) # compute all sample proportions
 aux <- aux / number_of_samples
 standard_deviation <- aux^(1/2)
 
-# plot the list of means
+# plot the list of proportions
 enframe(list) %>%
   ggplot() + geom_bar(aes(x=value)) + scale_x_continuous(name = "proportions")
 
