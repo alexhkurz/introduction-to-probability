@@ -7,6 +7,7 @@ We started by choosing a game that is played by rolling two dice such as backgam
 - [Expected Values](https://hackmd.io/@alexhkurz/S1xs327aL)
 - [The Law of Large Numbers](https://hackmd.io/@alexhkurz/BkW-1p7aL)
 - [Central Limit Theorem](https://hackmd.io/@alexhkurz/SJIoIAvE5)
+- [Sampling Distribution of Sample Proportion](https://hackmd.io/@alexhkurz/BktDYzqNc)
 
 Potential applications of statistics (to be continued when the opportunity arises):
 - [The Game of Go](https://hackmd.io/@alexhkurz/HyudqJZC8)
