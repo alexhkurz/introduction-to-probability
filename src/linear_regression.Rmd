@@ -1,0 +1,105 @@
+---
+title: "Linear Regression"
+output: html_notebook
+---
+
+In the `.Rmd`-file, you can execute chunks by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+Suggested Experiments:
+
+- Change the standard deviation of the noise and observe the effect this has on correlation,
+- Compare the scaled and unscaled version of the data and observe which statistics changes and which do remain unchanged.
+
+Load libraries.
+
+```{r}
+library(tidyverse)
+library(moderndive)
+```
+
+Parameters of this notebook. Modify to run your own experiments.
+
+```{r}
+m <- 1 # slope of the linear model
+b <- 2 # intercept of the linear model
+n <- 30 # sample size
+scale_x <- 2 # rescale x for comparison
+scale_y <- 3 # rescale y for comparison
+```
+
+Create random data. The noise on y is sampled from a normal distribution.
+
+```{r}
+x <-  runif(30, 0, 10) # choose 30 random points on x between 0 and 10
+noise <- rnorm(30, mean=0, sd=sd_y) # create some noise on y
+y <- m*x + b + noise # compute y coordinates
+pairs <- tibble(x,y) # make a table with all (x,y)
+```
+
+Glimpse at the data.
+
+```{r}
+print(pairs) 
+```
+
+Plot data and regression line.
+
+```{r}
+pairs %>%
+  ggplot(aes(x,y)) +
+    geom_point() +
+    geom_smooth(formula = y ~ x, method = "lm", se=FALSE) + # "lm" computes a linear model (regression) +
+    labs (title = "unscaled data")
+
+```
+
+Computer printout of regression.
+
+```{r}
+score_model <- lm(y ~ x, data = pairs) # compute the regression (lm for linear model)
+get_regression_table(score_model) # output to the console
+```
+
+Get the Correlation.
+
+```{r}
+get_correlation(formula = y ~ x, data = pairs) # output to the console
+```
+
+Create rescaled data for comparison
+
+```{r}
+x <- scale_x*x # scale x
+y <- scale_y*y # scale y
+pairs_scaled <- tibble(x,y) # make table
+```
+
+Plot scaled data and regression line.
+
+```{r}
+pairs_scaled %>%
+  ggplot(aes(x,y)) +
+    geom_point() +
+    geom_smooth(formula = y ~ x, method = "lm", se=FALSE) + # "lm" computes a linear model (regression) +
+    labs (title = "scaled data")
+
+```
+
+Computer printout of regression for scaled data.
+
+```{r}
+score_model <- lm(y ~ x, data = pairs_scaled) # compute the regression (lm for linear model)
+get_regression_table(score_model) # output to the console
+```
+
+Get the Correlation.
+
+```{r}
+get_correlation(formula = y ~ x, data = pairs_scaled) # output to the console
+```
+
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
